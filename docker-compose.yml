@@ -1,0 +1,31 @@
+# docker-compose.yml
+version: '3.1'
+
+services:
+
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    networks:
+        # you may set custom IP addresses
+        front:
+            ipv4_address: 172.16.238.11 
+            ipv6_address: "2001:3984:3989::11"
+
+networks:
+    front:
+        # use the bridge driver, but enable IPv6
+        driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "true"
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.16.238.0/24
+                  gateway: 172.16.238.1
+                - subnet: "2001:3984:3989::/64"
+                  gateway: "2001:3984:3989::1"
