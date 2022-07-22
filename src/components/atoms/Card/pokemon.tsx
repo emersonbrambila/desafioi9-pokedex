@@ -111,23 +111,23 @@ const RecipeReviewCard: React.FC<IPokemonListlocal> = ({
     <>
       {pokemonDetalhes.name !== undefined ? (
         <>
-          <Card sx={{ margin: "10px" }}>
-            <CardHeader
-              avatar={
-                <Avatar
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetalhes.id}.png`}
-                  aria-label="recipe"
-                />
-              }
-              title={pokemonDetalhes.name}
-              subheader={`Tipo: ${pokemonDetalhes.types[0].type.name}`}
-            />
+          <Card sx={{ margin: "10px", padding: "15px", width: "200", boxShadow: "3px 0px 10px #31313114" }}>
             <CardMedia
               component="img"
-              height="194"
+              height="150"
               image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonDetalhes.id}.svg`}
               alt={pokemonDetalhes.name}
             />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">{pokemonDetalhes.name}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Tipo: ${pokemonDetalhes.types[0].type.name}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Peso: ${pokemonDetalhes.weight}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Tamanho: ${pokemonDetalhes.height}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Estatísticas de velocidade: ${pokemonDetalhes.stats[5].base_stat}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Defesa: ${pokemonDetalhes.types[0].type.name}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Ataque: ${pokemonDetalhes.stats[1].base_stat}`}</Typography>
+              <Typography variant="body2" color="text.secondary">{`Hp: ${pokemonDetalhes.stats[0].base_stat}`}</Typography>
+            </CardContent>
             <CardActions disableSpacing>
               <IconButton
                 aria-label="Adicionar aos Favoritos"
@@ -139,49 +139,7 @@ const RecipeReviewCard: React.FC<IPokemonListlocal> = ({
                   <FavoriteIcon />
                 )}
               </IconButton>
-              <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="Ver mais"
-              >
-                <ExpandMoreIcon />
-              </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography paragraph>
-                  <b>Mais Detalhes:</b>
-                </Typography>
-                <Typography>
-                  <b>Peso: </b>
-                  {`${pokemonDetalhes.weight}`}
-                </Typography>
-                <Typography>
-                  <b>Tamanho: </b>
-                  {`${pokemonDetalhes.height}`}
-                </Typography>
-                {/* <Typography><b></b>{`Lista de tipos: ${pokemonDetalhes.name}`}</Typography> */}
-                {/* <Typography><b></b>{`Lista de habilidades: ${pokemonDetalhes.name}`}</Typography> */}
-                <Typography>
-                  <b>Estatísticas de velocidade: </b>
-                  {`${pokemonDetalhes.stats[5].base_stat}`}
-                </Typography>
-                <Typography>
-                  <b>Defesa: </b>
-                  {`${pokemonDetalhes.stats[2].base_stat}`}
-                </Typography>
-                <Typography>
-                  <b>Ataque: </b>
-                  {`${pokemonDetalhes.stats[1].base_stat}`}
-                </Typography>
-                <Typography>
-                  <b>Hp: </b>
-                  {`${pokemonDetalhes.stats[0].base_stat}`}
-                </Typography>
-                {/* <Typography><b>{`Cada passo de sua evolução: ${pokemonDetalhes.name}`}</Typography>                         */}
-              </CardContent>
-            </Collapse>
           </Card>
         </>
       ) : (

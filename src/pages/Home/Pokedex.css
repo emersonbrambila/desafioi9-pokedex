@@ -1,0 +1,20 @@
+.contentCards {
+    max-width: 1440px;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.MuiCardContent-root.css-46bh2p-MuiCardContent-root {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.MuiTypography-root.MuiTypography-h5.MuiTypography-gutterBottom.css-h93ljk-MuiTypography-root {
+    color: #6a6a6a;
+}
+
+.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-o69gx8-MuiCardMedia-root{
+    object-fit: contain;
+}

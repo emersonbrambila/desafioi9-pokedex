@@ -4,8 +4,9 @@ import { StyDiv, StyImg, StyNav } from "./styles";
 const NavBar: React.FC = () => {
   return (
     <StyNav>
-      <StyDiv><StyImg 
-      alt="PokeApi Logo" src="img/pokeapi.png" className="logo-NavBar" /></StyDiv>
+      <StyDiv>
+        <StyImg alt="Teste Ímpar" src="img/logo-teste.png" className="logo-NavBar" />
+      </StyDiv>
     </StyNav>
   );
 };
